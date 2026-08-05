@@ -4,8 +4,14 @@
   "package": "dev.upcraft.leashablecushions.mixin",
   "compatibilityLevel": "JAVA_${java_version}",
   "mixins": [
+    "BlockAttachedEntityMixin",
+    "CushionMixin",
+    "EntityMixin",
+    "EntityTypesMixin"
   ],
   "client": [
+    "client.CushionRendererMixin",
+    "client.CushionRenderStateMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -140,6 +140,7 @@ jobs:
         with:
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           version: ${{ env.TAG }}+${{ matrix.loader }}
+          version-type: beta
           files: |
             ${{ matrix.loader }}/build/libs/!(*-@(sources|javadoc|testmod)).jar
             ${{ matrix.loader }}/build/libs/*-@(sources|javadoc).jar
@@ -150,6 +151,7 @@ jobs:
         with:
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
           version: ${{ env.TAG }}+${{ matrix.loader }}
+          version-type: beta
           files: |
             ${{ matrix.loader }}/build/libs/!(*-@(sources|javadoc|testmod)).jar
             ${{ matrix.loader }}/build/libs/*-@(sources|javadoc).jar
