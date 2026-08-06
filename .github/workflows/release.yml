@@ -141,6 +141,8 @@ jobs:
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           version: ${{ env.TAG }}+${{ matrix.loader }}
           version-type: beta
+          game-version-filter: none
+          game-versions: "26.3-snapshot-7"
           files: |
             ${{ matrix.loader }}/build/libs/!(*-@(sources|javadoc|testmod)).jar
             ${{ matrix.loader }}/build/libs/*-@(sources|javadoc).jar
@@ -152,6 +154,9 @@ jobs:
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
           version: ${{ env.TAG }}+${{ matrix.loader }}
           version-type: beta
+          game-version-filter: none
+#          game-versions: "26.3-Snapshot"
+          game-versions: "26.2"
           files: |
             ${{ matrix.loader }}/build/libs/!(*-@(sources|javadoc|testmod)).jar
             ${{ matrix.loader }}/build/libs/*-@(sources|javadoc).jar
