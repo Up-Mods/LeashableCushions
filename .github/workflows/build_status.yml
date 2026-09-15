@@ -39,14 +39,13 @@ jobs:
           name: ${{ github.event.repository.name }}-Fabric-${{ github.sha }}
           path: |
             Fabric/build/libs/*.jar
-# TODO neoforge disabled
-#      - name: Upload build artifacts (NeoForge)
-#        continue-on-error: true
-#        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
-#        with:
-#          name: ${{ github.event.repository.name }}-NeoForge-${{ github.sha }}
-#          path: |
-#            NeoForge/build/libs/*.jar
+      - name: Upload build artifacts (NeoForge)
+        continue-on-error: true
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: ${{ github.event.repository.name }}-NeoForge-${{ github.sha }}
+          path: |
+            NeoForge/build/libs/*.jar
       - name: Run tests
         run: ./gradlew check
       - name: Publish Test Report
