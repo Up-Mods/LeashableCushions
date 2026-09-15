@@ -22,7 +22,7 @@ plugins {
 
 rootProject.name = "LeashableCushions"
 
-listOf("Common", "Fabric"/*, "NeoForge"*/).forEach {
+listOf("Common", "Fabric", "NeoForge").forEach {
     include(it)
     project(":$it").name = "${rootProject.name}-$it"
 }

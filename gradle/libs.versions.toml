@@ -1,27 +1,27 @@
 [versions]
-minecraft = "26.3-snapshot-7"
+minecraft = "26.3"
 java = "25"
 
 # https://projects.neoforged.net/neoforged/moddevgradle
-moddevgradle = "2.0.143"
+moddevgradle = "2.0.147"
 # https://projects.neoforged.net/neoforged/neoform
-neoform = "26.3-snapshot-7-1"
+neoform = "26.3-1"
 
 # NeoForge
 # https://projects.neoforged.net/neoforged/neoforge
-neoforge = "26.1.2.93"
+neoforge = "26.2.0.200-pr-3403-port-26.3"
 
 # Fabric
 # https://fabricmc.net/develop
-fabric_loom = "1.17.17" # https://maven.fabricmc.net/net/fabricmc/fabric-loom/net.fabricmc.fabric-loom.gradle.plugin/
-fabric_loader = "0.19.3"
-fabric_api = "0.156.2+26.3"
+fabric_loom = "1.18.1" # https://maven.fabricmc.net/net/fabricmc/fabric-loom/net.fabricmc.fabric-loom.gradle.plugin/
+fabric_loader = "0.19.5"
+fabric_api = "0.160.5+26.3"
 
 # Mods
-# https://maven.blamejared.com/mezz/jei/jei-26.1.2-common/
+# https://maven.blamejared.com/mezz/jei/jei-26.3-common/
 jei = "29.21.0.66"
 # https://modrinth.com/mod/modmenu/versions
-modmenu = "21.0.0-alpha.1"
+modmenu = "21.0.0-beta.1"
 # https://beehive.sh/mod/resourcefulconfig/versions
 resourcefulconfig = "4.0.1"
 # https://www.curseforge.com/minecraft/mc-mods/sparkweave/files/all

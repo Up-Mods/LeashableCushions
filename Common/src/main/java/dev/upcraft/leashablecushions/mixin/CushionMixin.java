@@ -29,19 +29,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class CushionMixin extends BlockAttachedEntity implements Leashable {
 
     @Unique
-    private Leashable.@Nullable LeashData leashData;
-    @Unique
-    @Nullable
-    private InterpolationHandler interpolationHandler;
+    private Leashable.@Nullable LeashData leashableCushions$leashData;
 
     private CushionMixin(EntityType<? extends BlockAttachedEntity> type, Level level) {
         super(type, level);
         throw new UnsupportedOperationException();
-    }
-
-    @Inject(method = "<init>", at = @At("RETURN"))
-    private void construct(EntityType<?> type, Level level, CallbackInfo ci) {
-        this.interpolationHandler = new LinearInterpolationHandler(this, 3);
     }
 
     @Override
@@ -49,25 +41,14 @@ public abstract class CushionMixin extends BlockAttachedEntity implements Leasha
         return true;
     }
 
-    // TODO fix this
-//    @Override
-//    public Vec3[] getQuadLeashOffsets() {
-//        return Leashable.createQuadLeashOffsets(this, 0.0, 0.64, 0.382, 0.88);
-//    }
-
     @Override
     public @Nullable LeashData getLeashData() {
-        return this.leashData;
+        return this.leashableCushions$leashData;
     }
 
     @Override
     public void setLeashData(@Nullable LeashData leashData) {
-        this.leashData = leashData;
-    }
-
-    @Override
-    public @Nullable InterpolationHandler getInterpolation() {
-        return this.interpolationHandler;
+        this.leashableCushions$leashData = leashData;
     }
 
     @Override
@@ -99,7 +80,7 @@ public abstract class CushionMixin extends BlockAttachedEntity implements Leasha
 
     @Inject(method = "addAdditionalSaveData", at = @At("RETURN"))
     private void storeExtraData(ValueOutput output, CallbackInfo ci) {
-        this.writeLeashData(output, this.leashData);
+        this.writeLeashData(output, this.leashableCushions$leashData);
     }
 
     @Inject(method = "readAdditionalSaveData", at = @At("RETURN"))

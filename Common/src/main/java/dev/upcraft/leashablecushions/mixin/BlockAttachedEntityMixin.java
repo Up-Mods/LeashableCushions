@@ -69,7 +69,7 @@ public abstract class BlockAttachedEntityMixin extends Entity {
         }
     }
 
-    @Inject(method = "setPos", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/decoration/BlockAttachedEntity;recalculateBoundingBox()V"), cancellable = true)
+    @Inject(method = "setPos", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/decoration/BlockAttachedEntity;recalculateBoundingBox()V"))
     private void onSetPos(double x, double y, double z, CallbackInfo ci) {
         if (this instanceof Leashable leashable && leashable.mayBeLeashed()) {
             super.setPos(x, y, z);
