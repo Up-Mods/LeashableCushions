@@ -5,20 +5,6 @@ plugins {
 
 val modID = providers.gradleProperty("mod_id").get()
 
-repositories {
-    exclusiveContent {
-        forRepository {
-            maven("https://prmaven.neoforged.net/NeoForge/pr3403") {
-                name = "NeoForge PR-Maven #3403"
-            }
-        }
-        filter {
-            includeModule("net.neoforged", "neoforge")
-            includeModule("net.neoforged", "testframework")
-        }
-    }
-}
-
 // need this before dependencies because it configures the plugin and creates additionalRuntimeClasspath configuration
 neoForge.version = libs.versions.neoforge.get()
 
